@@ -34,10 +34,8 @@ function header(c, { title, description = '', active = '', bodyClass = '' }) {
 ${description ? `<meta name="description" content="${esc(description)}" />\n` : ''}<link rel="icon" href="${url('/favicon-32.jpg')}" sizes="32x32" />
 <link rel="icon" href="${url('/favicon-192.jpg')}" sizes="192x192" />
 <link rel="apple-touch-icon" href="${url('/apple-touch-icon.jpg')}" />
-${royalSlider ? `<link rel="stylesheet" href="${url('/royalslider/royalslider.css')}" />\n<link rel="stylesheet" href="${url('/royalslider/skin/rs-moritz-poth.css')}" />\n` : ''}<link rel="stylesheet" href="${url('/css/style.css')}" type="text/css" media="screen" />
-<!-- Schriften: vorerst noch von Google geladen (TODO: lokal einbinden, siehe README) -->
-<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Unica+One" rel="stylesheet">
+${royalSlider ? `<link rel="stylesheet" href="${url('/royalslider/royalslider.css')}" />\n<link rel="stylesheet" href="${url('/royalslider/skin/rs-moritz-poth.css')}" />\n` : ''}<link rel="stylesheet" href="${url('/css/fonts.css')}" type="text/css" />
+<link rel="stylesheet" href="${url('/css/style.css')}" type="text/css" media="screen" />
 </head>
 <body id="main_page" class="${bodyClass}">
 	<div id="wrapper">

@@ -1,0 +1,16 @@
+/* Schriften lokal eingebunden (statt von Google Fonts) – Lizenz: SIL Open Font License, siehe /fonts */
+@font-face {
+	font-family: 'Inconsolata';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url('../fonts/inconsolata-regular.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Unica One';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url('../fonts/unica-one-regular.woff') format('woff');
+}
