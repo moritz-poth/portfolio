@@ -3,7 +3,7 @@ titel: HIGH STAKES
 untertitel: ZDFneo Serie
 kategorie: fiction
 datum: 2025-06-21
-vorschaubild: 05.jpg
+vorschaubild: 01.jpg
 ---
 
 Ayla (Via Jikeli) ist gläubige Muslima und eine hochbegabte Astrophysikstudentin, die davon träumt, eines Tages ins Weltall fliegen zu können. Allerdings steht sie vor einem Problem, als sie eine seltene Chance auf ein NASA-Praktikum in den USA erhält: Sie muss die hohen Kosten für Flug und Unterkunft selbst tragen und das zusätzlich zu den ohnehin schon gigantischen Schulden ihres Studienkredits. Von ihren Eltern kann Ayla keine Hilfe erwarten, die ihren Traum als kindliche Spinnerei abtun.

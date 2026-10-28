@@ -3,7 +3,7 @@ titel: MAXTON HALL – DIE WELT ZWISCHEN UNS
 untertitel: AMAZON ORIGINAL SERIE
 kategorie: fiction
 datum: 2023-07-21
-vorschaubild: 08.jpg
+vorschaubild: 01.jpg
 ---
 
 Im Zentrum von »MAXTON HALL – DIE WELT ZWISCHEN UNS« steht die ehrgeizige Stipendiatin Ruby Bell aus einfachen Verhältnissen, die auf dem elitären Maxton Hall Privatcollege einzig und allein auf ihren Lebenstraum hinarbeitet: das Studium an der Oxford University. Ihre sorgfältig geordnete Welt gerät jäh aus den Fugen, als sie unfreiwillig Zeugin eines brisanten Geheimnisses wird, das sie mitten ins Fadenkreuz des überprivilegierten und arroganten Schülers James Beaufort rückt. Der gutaussehende Erbe eines Modehauses versucht fortan, Rubys Schweigen zu erkaufen. Und obwohl die beiden aus unterschiedlichen Welten kommen, werden sie bald alles aufs Spiel setzen, um zusammen zu sein. Aber können sie den Abgrund, der sie trennt, wirklich überwinden?

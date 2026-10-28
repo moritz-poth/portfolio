@@ -25,8 +25,8 @@ function header(c, { title, description = '', active = '', bodyClass = '' }) {
     })
     .join('\n\t\t\t\t\t');
 
-  return `<!DOCTYPE html>
-<html lang="de-DE">
+  return `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de-DE">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=1030">
@@ -126,12 +126,11 @@ function project(c, { p, newer, older }) {
   const { url, royalSlider, esc } = c;
   let stills = '';
   if (p.images.length) {
-    const first = p.images[0];
     const slides = p.images
-      .map((i) => `<img class="rsImg" src="${i.src}" width="${i.w}" height="${i.h}" data-rsw="${i.w}" data-rsh="${i.h}" alt="${esc(p.title)}" />`)
-      .join('\n\t\t');
+      .map((i) => `<div class="rsContent">\n  <img class="rsImg" src="${i.src}" alt="${esc(p.title)}" />\n</div>`)
+      .join('\n');
     stills = `	<div id="stills" class="stills">
-		<div class="royalSlider rsMoritzPoth" data-ratio="${(first.h / first.w).toFixed(5)}">
+		<div class="royalSlider rsMoritzPoth rs-default-template" style="width:100%;">
 		${slides}
 		</div>
 	</div>

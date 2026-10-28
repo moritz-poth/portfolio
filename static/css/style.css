@@ -514,12 +514,16 @@ footer {
 }
 
 /* Galerie: Solange RoyalSlider nicht geladen ist, nur das erste Bild zeigen */
+.royalSlider:not(.rsHor):not(.rsVer) {
+	height: auto;
+}
+
 .royalSlider:not(.rsHor):not(.rsVer) .rsImg {
 	display: block;
 	width: 100%;
 	height: auto;
 }
 
-.royalSlider:not(.rsHor):not(.rsVer) .rsImg ~ .rsImg {
+.royalSlider:not(.rsHor):not(.rsVer) > .rsContent ~ .rsContent {
 	display: none;
 }
