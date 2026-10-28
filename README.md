@@ -1,2 +1,2 @@
-# moritz-poth-website
+# portfoilio
 Portfolio by MORITZ POTH
