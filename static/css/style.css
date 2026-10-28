@@ -1,0 +1,525 @@
+/*  
+Theme Name: MORITZ POTH Portfolio 2018.2
+Text Domain: moritzpoth
+Theme URI: http://www.moritz-poth.com
+Version: v06
+Description: Portfolio
+Author: Moritz Poth
+Author URI: http://www.moritz-poth.com
+License: none
+License URI: none
+Tags: none
+Copyright: (c) 2018 Moritz Poth
+*/
+
+html, body, div, applet, object, iframe,
+blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0px;
+	padding: 0px;
+	color: #777777;
+}
+
+body {
+	position: relative;
+	background-color: #dfdfdf;
+	font-family: 'Inconsolata', monospace;
+	font-weight: 400;
+	font-size: 16px;
+	color: #777777;
+	text-decoration: none;
+	z-index: -1;
+}
+
+#wrapper {
+	position: relative;
+	z-index: 0;
+	background-color: #f2f2f2;
+	box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+	padding-bottom: 50px;
+	padding-top: 70px;
+}
+
+#body_center {
+	width: 800px;
+	margin: 0 auto;
+	background-color: #f2f2f2;
+}
+
+#clear {
+	clear: both;
+	line-height: 0px;
+	font-size: 0px;
+	margin: 0px;
+	padding: 0px;
+}
+
+a {
+	color: #777777;
+	text-decoration: underline;
+}
+
+a:hover {
+	color: #212121;
+	text-decoration: none;
+}
+
+h1 {
+	color: #212121;
+	font-family: 'Unica One', cursive;
+	font-size: 26px;
+}
+
+.next {
+	font-size: 12px;
+	margin-bottom: 10px;
+	float: left;
+}
+
+.previous {
+	font-size: 12px;
+	margin-bottom: 10px;
+	float: right;
+}
+
+.menu_not {
+	margin: 0px 20px 0px 0px;
+	padding: 0px;
+	float: left;
+}
+
+#navigation {
+	width: 800px;
+}
+
+/* MENÜ */
+
+#navi {
+	width: 800px;
+	margin-top: 25px;
+}
+
+#navi-name {
+	text-align: center;
+	color: #212121;
+	font-family: 'Unica One', cursive;
+	font-size: 26px;
+}
+
+#navi-sub {
+	text-align: center;
+	color: #212121;
+	font-family: 'Unica One', cursive;
+	font-size: 16px;
+	margin-bottom: 40px;
+}
+
+#navi-center {
+	width: 800px;
+	position: relative;
+}
+
+#navigation ul.menu {
+	clear: left;
+	float: left;
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+	position: relative;
+	left: 50%;
+	text-align: center;
+}
+
+#navigation ul.menu li {
+	display: block;
+	float: left;
+	list-style: none;
+	margin: 0px 20px 0px 0px;
+	padding: 0px;
+	position: relative;
+	right: 50%;
+	text-transform: uppercase !important;
+}
+
+#navigation ul.menu li:last-child {
+	margin-right: 0px !important;
+}
+
+#navigation ul.menu li a {
+	float: left;
+	color: #777777;
+	text-decoration: none;
+	position: relative;
+}
+
+#navigation ul.menu li a:before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 1px;
+	top: 26px;
+	left: 0;
+	background-color: #212121;
+	visibility: hidden;
+	-webkit-transform: scaleX(0);
+	transform: scaleX(0);
+	-webkit-transition: all 0.3s cubic-bezier(.175,.885,.32,1.075);
+	transition: all 0.3s cubic-bezier(.175,.885,.32,1.075);
+}
+
+#navigation ul.menu li a:hover:before {
+	visibility: visible;
+	-webkit-transform: scaleX(1);
+	transform: scaleX(1);
+}
+
+#navigation ul.menu li a:hover, #navigation ul.menu li a.active {
+	color: #212121;
+}
+
+#navigation ul.menu li.current-menu-item a {
+	color: #212121 !important;
+}
+
+/* MENÜ ENDE */
+
+#content {
+	clear: both;
+	margin-top: 90px;
+}
+
+#content ul {
+	list-style-type: none;
+}
+
+#content ul li .title {
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 50px;
+	margin: auto;
+	color: #eaeaea;
+}
+
+#content ul li .title .headline {
+	color: #eaeaea;
+	text-transform: uppercase;
+}
+
+#content ul li .title .line {
+	color: #eaeaea;
+}
+
+#content ul li .title .line .vline {
+	border-left: 1px solid #eaeaea;
+}
+
+#content ul li .title .line hr {
+	color: #eaeaea;
+	background-color: #eaeaea;
+}
+
+#content ul li .title .subline {
+	color: #eaeaea;
+	text-transform: uppercase;
+}
+
+#content ul li {
+	position: relative;
+	margin-bottom: 60px;
+}
+
+#content ul li:last-child {
+	margin-bottom: 0px !important;
+}
+
+#content .header {
+	border: none;
+}
+
+#content .title {
+	margin-top: 60px;
+	text-align: center;
+	font-family: 'Unica One', cursive;
+}
+
+#content .showcase_video {
+	margin-top: 20px;
+}
+
+#content .title .headline {
+	font-size: 26px;
+	text-transform: uppercase;
+	color: #212121;
+}
+
+#content .title .line {
+	position: relative;
+}
+
+#content .title .line .vline {
+	top: -4px;
+	border-left: 1px solid #212121;
+	position: absolute;
+	line-height: 9px;
+}
+
+#content .title .line hr {
+	width: 200px;
+	height: 1px;
+	color: #212121;
+	background-color: #212121;
+	border: none;
+}
+
+#content .title .subline {
+	font-size: 16px;
+	text-transform: uppercase;
+	color: #212121;
+}
+
+#content .projectnavigation {
+	line-height: 26px;
+	margin-top: 60px;
+}
+
+#content .text {
+	line-height: 26px;
+	margin-top: 60px;
+}
+
+#content .showcase {
+	margin-top: 20px !important;
+}
+
+#content .projektseite {
+	line-height: 26px;
+}
+
+#content .moviestills {
+	font-size: 12px;
+}
+
+#content .the_content {
+	margin-top: 50px;
+}
+
+#content .projekt_daten {
+	line-height: normal;
+	margin-top: 50px;
+	font-size: 12px;
+}
+
+#content .project_title {
+	margin-top: 60px;
+	text-align: center;
+	font-family: 'Unica One', cursive;
+	font-size: 16px;
+}
+
+footer {
+	position:relative;
+    z-index:-3;
+	height: 225px;
+	background-color: #dfdfdf;
+}
+
+#footer_content {
+	position: fixed;
+	bottom: 0;
+	z-index: -2;
+	width: 100%;
+	margin-bottom: 75px;
+	font-size: 12px;
+	line-height: 16px;
+}
+
+#footer_content_center {
+	z-index: -2;
+	width: 800px;
+	margin: 0px auto;
+	text-align: center;
+}
+
+#footer_content_center p, #footer_content_center i {
+	z-index: -2;
+}
+
+/* SOCIAL ICON */
+
+.social_icon {
+	z-index: -2;
+	position: relative;
+	list-style: none;
+	clear: left;
+	float: left;
+	margin: 0px;
+	padding: 0px;
+	left: 50%;
+	text-align: center;
+}
+
+.social_icon > li {
+	z-index: -2;
+	display: inline-block;
+	padding-left: 3px;
+	padding-right: 3px;
+	float: left;
+	list-style: none;
+	position: relative;
+	right: 50%;
+}
+
+.social_icon li a {
+	z-index: -2;
+	position: relative;
+	display: inline-block;
+	background-color: #eee;
+	width: 35px;
+	height: 35px;
+	-webkit-border-radius: 50%;
+	-webkit-background-clip: padding-box;
+	-moz-border-radius: 50%;
+	-moz-background-clip: padding;
+	border-radius: 50%;
+	background-clip: padding-box;
+	-webkit-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+}
+
+
+.social_icon li a i {
+	z-index: -2;
+	display: block;
+	font-size: 16px;
+	color: #333;
+	top: 50%;
+	left: 50%;
+	position: absolute;
+	-webkit-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+}
+
+/* NEEDED */
+
+.wp-caption {}
+.wp-caption-text {}
+.sticky {}
+.gallery-caption {}
+.bypostauthor {}
+.alignright {}
+.alignleft {}
+.aligncenter {}
+
+/* TOP BUTTON */
+
+#gototop {
+	display: none;
+	position: fixed;
+	bottom: 30px;
+	right: 50px;
+	z-index: 99;
+	border: 1px solid #212121;
+	outline: none;
+	background-color: #f2f2f2;
+	color: #212121;
+	cursor: pointer;
+	padding: 5px 8px;
+}
+
+#gototop:hover {
+	background-color: #dddddd;
+	color: #777777;
+}
+
+/* ROYAL SLIDER */
+
+.royalSlider .royalSlide,
+.royalSlider .royalWrapper {
+	/* Bakground behind slides */
+	background: #f2f2f2 !important;
+}
+
+/* COOKIE NOTICE */
+
+#cookie-notice {
+	z-index: 1;
+	background-color: #dfdfdf !important;
+	box-shadow: 0 5px 5px rgba(0,0,0,0.1);
+}
+
+.cn-button {
+	display: inline-block !important;
+	background-color: #f2f2f2 !important;
+	border: 1px solid #212121 !important;
+	border-radius: 2px !important;
+	color: #212121 !important;
+	padding: 2px 12px !important;
+	font-family: 'Inconsolata', monospace !important;
+	font-style: normal !important;
+	font-size: 12px !important;
+	line-height: 18px !important;
+	text-shadow: none !important;
+	text-transform: uppercase !important;
+	cursor: pointer !important;
+	text-decoration: none !important;
+	outline: 0 !important;
+	white-space: nowrap !important;
+	background: linear-gradient(to bottom, #f2f2f2 0%, #f2f2f2 100%) !important;
+}
+
+/* All Login Form */
+
+.login-links {
+	display: none;
+}
+
+.login-remember {
+	display: none;
+}
+
+.login-submit {
+	margin-top: 70px;
+}
+
+.login .input {
+	margin: 5px 0px 0px 0px;
+	width: 348px;
+}
+
+/* =========================================================
+   Ergänzungen für die statische Version (GitHub Pages)
+   ========================================================= */
+
+/* Icons (früher Font Awesome Webfont, jetzt als SVG eingebettet) */
+.icon svg {
+	display: inline-block;
+	height: 1em;
+	width: auto;
+	fill: currentColor;
+	vertical-align: -0.125em;
+}
+
+.social_icon li a i.icon {
+	line-height: 0;
+}
+
+/* Galerie: Solange RoyalSlider nicht geladen ist, nur das erste Bild zeigen */
+.royalSlider:not(.rsHor):not(.rsVer) .rsImg {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.royalSlider:not(.rsHor):not(.rsVer) .rsImg ~ .rsImg {
+	display: none;
+}

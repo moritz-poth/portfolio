@@ -1,0 +1,23 @@
+{
+  "titel": "MORITZ POTH",
+  "untertitel": "Filmeditor",
+
+  "menue": [
+    { "name": "FICTION",          "link": "/" },
+    { "name": "DOCUMENTARY",      "link": "/category/documentary/" },
+    { "name": "COMMERCIAL/MUSIC", "link": "/category/commercial-music/" },
+    { "name": "ABOUT",            "link": "/about/" },
+    { "name": "CONTACT",          "link": "/contact/" }
+  ],
+
+  "kategorien": {
+    "fiction":          { "name": "FICTION", "startseite": true },
+    "documentary":      { "name": "DOCUMENTARY" },
+    "commercial-music": { "name": "COMMERCIAL/MUSIC" }
+  },
+
+  "social": {
+    "vimeo": "https://vimeo.com/moritzpoth",
+    "instagram": "https://www.instagram.com/moritzpoth/"
+  }
+}
