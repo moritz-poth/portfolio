@@ -90,6 +90,12 @@ function writePage(route, html) {
   fs.writeFileSync(file, html);
 }
 
+function copyImage(img, slug) {
+  const dst = path.join(OUT, slug, img.name);
+  fs.mkdirSync(path.dirname(dst), { recursive: true });
+  fs.copyFileSync(img.file, dst);
+}
+
 function copyDir(src, dst) {
   fs.mkdirSync(dst, { recursive: true });
   for (const e of fs.readdirSync(src, { withFileTypes: true })) {
@@ -106,19 +112,25 @@ function copyDir(src, dst) {
 const IMG_EXT = /\.(jpe?g|png|webp)$/i;
 const warnings = [];
 
-const projects = fs
-  .readdirSync(path.join(ROOT, 'content', 'projekte'))
-  .filter((f) => f.endsWith('.md'))
-  .map((f) => {
-    const slug = f.replace(/\.md$/, '');
-    const { data, body } = readContentFile(path.join(ROOT, 'content', 'projekte', f));
+const listMd = (dir) =>
+  fs.readdirSync(dir).filter((f) => f.endsWith('.md') && !f.startsWith('.')).map((f) => f.replace(/\.md$/, ''));
+
+// Jedes Projekt: content/projekte/<adresse>.md + Bilder im Ordner content/projekte/<adresse>/
+const projects = listMd(path.join(ROOT, 'content', 'projekte'))
+  .map((slug) => {
+    const { data, body } = readContentFile(path.join(ROOT, 'content', 'projekte', `${slug}.md`));
     if (data.entwurf === 'ja') return null;
     const [text, credits = ''] = body.split(/^##\s*Credits\s*$/im);
 
-    const dir = path.join(ROOT, 'static', 'images', slug);
+    const dir = path.join(ROOT, 'content', 'projekte', slug);
     const files = fs.existsSync(dir) ? fs.readdirSync(dir).filter((x) => IMG_EXT.test(x)).sort() : [];
-    if (!files.length) warnings.push(`Projekt "${slug}": keine Bilder in static/images/${slug}/`);
-    const images = files.map((name) => ({ src: url(`/images/${slug}/${name}`), name, ...imageSize(path.join(dir, name)) }));
+    if (!files.length) warnings.push(`Projekt "${slug}": keine Bilder im Ordner content/projekte/${slug}/`);
+    const images = files.map((name) => ({
+      file: path.join(dir, name),
+      name,
+      src: url(`/${slug}/${encodeURIComponent(name)}`),
+      ...imageSize(path.join(dir, name)),
+    }));
     const thumb = images.find((i) => i.name === data.vorschaubild) || images[0];
     if (data.vorschaubild && thumb && thumb.name !== data.vorschaubild) {
       warnings.push(`Projekt "${slug}": Vorschaubild "${data.vorschaubild}" nicht gefunden, nehme ${thumb.name}`);
@@ -143,19 +155,16 @@ const projects = fs
   // Neueste zuerst – wie bei WordPress
   .sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : a.slug.localeCompare(b.slug)));
 
-const pages = fs
-  .readdirSync(path.join(ROOT, 'content', 'seiten'))
-  .filter((f) => f.endsWith('.md'))
-  .map((f) => {
-    const slug = f.replace(/\.md$/, '');
-    const { data, body } = readContentFile(path.join(ROOT, 'content', 'seiten', f));
-    let image = null;
-    if (data.bild) {
-      const file = path.join(ROOT, 'static', 'images', 'seiten', data.bild);
-      image = { src: url(`/images/seiten/${data.bild}`), ...imageSize(file) };
-    }
-    return { slug, url: url(`/${slug}/`), title: data.titel || slug, description: data.beschreibung || '', html: autop(body), image };
-  });
+// Jede Seite: content/seiten/<adresse>.md, ein Bild ggf. im Ordner content/seiten/<adresse>/
+const pages = listMd(path.join(ROOT, 'content', 'seiten')).map((slug) => {
+  const { data, body } = readContentFile(path.join(ROOT, 'content', 'seiten', `${slug}.md`));
+  let image = null;
+  if (data.bild) {
+    const file = path.join(ROOT, 'content', 'seiten', slug, data.bild);
+    image = { file, name: data.bild, src: url(`/${slug}/${encodeURIComponent(data.bild)}`), ...imageSize(file) };
+  }
+  return { slug, url: url(`/${slug}/`), title: data.titel || slug, description: data.beschreibung || '', html: autop(body), image };
+});
 
 // ---------------------------------------------------------------------------
 // Seiten erzeugen
@@ -186,12 +195,14 @@ for (const [key, cat] of Object.entries(site.kategorien)) {
 
 // Projektseiten mit "next"/"previous" innerhalb der Kategorie
 for (const p of projects) {
+  for (const img of p.images) copyImage(img, p.slug);
   const same = projects.filter((x) => x.category === p.category);
   const i = same.indexOf(p);
   writePage(`/${p.slug}/`, T.project(ctx, { p, newer: same[i - 1], older: same[i + 1] }));
 }
 
 for (const page of pages) {
+  if (page.image) copyImage(page.image, page.slug);
   writePage(`/${page.slug}/`, T.page(ctx, { page, active: page.url }));
 }
 

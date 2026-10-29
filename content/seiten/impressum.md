@@ -7,14 +7,14 @@ beschreibung:
 <h2>Impressum</h2>
 Angaben gemäß § 5 DDG
 
-<strong>Vertreten durch:</strong>
+<strong>Vertreten durch: </strong>
 Moritz Poth
 
 <strong>Kontakt:</strong>
 m +49 (0) 176 235 734 26
 mail@moritz-poth.com
 
-<strong>Haftungsausschluss:</strong>
+<strong>Haftungsausschluss: </strong>
 
 <strong>Haftung für Inhalte</strong>
 
