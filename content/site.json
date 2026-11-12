@@ -1,6 +1,7 @@
 {
   "titel": "MORITZ POTH",
   "untertitel": "Filmeditor",
+  "domain": "https://moritz-poth.com",
 
   "menue": [
     { "name": "FICTION",          "link": "/" },

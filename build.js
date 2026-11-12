@@ -208,6 +208,21 @@ for (const page of pages) {
 
 writePage('/404.html', T.notFound(ctx));
 
+// Sitemap für Google: alle Übersichten, Projekte und Seiten (Entwürfe sind oben schon rausgefiltert)
+const sitemapRoutes = [
+  '/',
+  ...Object.entries(site.kategorien).filter(([, c]) => !c.startseite).map(([k]) => `/category/${k}/`),
+  ...projects.map((p) => `/${p.slug}/`),
+  ...pages.map((p) => `/${p.slug}/`),
+];
+fs.writeFileSync(
+  path.join(OUT, 'sitemap.xml'),
+  '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
+    sitemapRoutes.map((r) => `  <url><loc>${esc(site.domain + url(r))}</loc></url>`).join('\n') +
+    '\n</urlset>\n'
+);
+fs.writeFileSync(path.join(OUT, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${site.domain}${url('/sitemap.xml')}\n`);
+
 // ---------------------------------------------------------------------------
 
 console.log(`✔ Fertig: ${projects.length} Projekte, ${pages.length} Seiten → _site/`);
